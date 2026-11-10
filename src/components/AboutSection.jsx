@@ -2,7 +2,7 @@ import "../styles/AboutSection.css";
 
 function AboutSection() {
   return (
-    <section className="about-section">
+    <section className="about-section" id="about">
       <div className="about-section__visual">
         <img
           src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85"

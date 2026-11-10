@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../context/useCart";
 import "../styles/Navbar.css";
-import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,10 +11,10 @@ function Navbar() {
 
   return (
     <header className="navbar">
-      <a href="/" className="navbar__brand" onClick={closeMenu}>
+      <Link to="/" className="navbar__brand" onClick={closeMenu}>
         <span className="navbar__logo">ADEYINKA</span>
         <span className="navbar__tagline">SURROUNDED BY ROYALTY</span>
-      </a>
+      </Link>
 
       <button
         className="navbar__menu-toggle"
@@ -30,21 +30,29 @@ function Navbar() {
         className={`navbar__links ${menuOpen ? "navbar__links--open" : ""}`}
         aria-label="Main navigation"
       >
-        <a href="/" onClick={closeMenu}>
+        <Link to="/" onClick={closeMenu}>
           Home
-        </a>
-        <a href="/shop" onClick={closeMenu}>
+        </Link>
+
+        <Link to="/shop" onClick={closeMenu}>
           Shop
-        </a>
-        <a href="/about" onClick={closeMenu}>
+        </Link>
+
+        <Link to="/#about" onClick={closeMenu}>
           Our Story
-        </a>
-        <a href="/contact" onClick={closeMenu}>
+        </Link>
+
+        <Link to="/contact" onClick={closeMenu}>
           Contact
-        </a>
+        </Link>
       </nav>
 
-      <Link to="/cart" className="navbar__cart" aria-label="Shopping cart">
+      <Link
+        to="/cart"
+        className="navbar__cart"
+        aria-label={`Shopping cart with ${cartCount} items`}
+        onClick={closeMenu}
+      >
         <span>Cart</span>
         <span className="navbar__cart-count">{cartCount}</span>
       </Link>
