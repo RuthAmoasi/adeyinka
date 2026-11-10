@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useCart } from "../context/useCart";
 import "../styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cartCount } = useCart();
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -41,10 +44,10 @@ function Navbar() {
         </a>
       </nav>
 
-      <a href="/cart" className="navbar__cart" aria-label="Shopping cart">
+      <Link to="/cart" className="navbar__cart" aria-label="Shopping cart">
         <span>Cart</span>
-        <span className="navbar__cart-count">0</span>
-      </a>
+        <span className="navbar__cart-count">{cartCount}</span>
+      </Link>
     </header>
   );
 }

@@ -1,9 +1,11 @@
 import { useParams, Link } from "react-router-dom";
 import products from "../data/products";
+import { useCart } from "../context/useCart";
 import "../styles/ProductDetails.css";
 
 function ProductDetails() {
   const { id } = useParams();
+  const { addToCart } = useCart();
 
   const product = products.find((item) => item.id === id);
 
@@ -47,7 +49,11 @@ function ProductDetails() {
             confirmed.
           </p>
 
-          <button type="button" className="product-details__button">
+          <button
+            type="button"
+            className="product-details__button"
+            onClick={() => addToCart(product)}
+          >
             ADD TO CART
           </button>
         </div>
