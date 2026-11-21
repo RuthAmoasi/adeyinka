@@ -5,6 +5,32 @@ import "../styles/Cart.css";
 function Cart() {
   const { cartItems, removeFromCart, updateQuantity, cartTotal } = useCart();
 
+  function handleWhatsAppCheckout() {
+    const orderDetails = cartItems
+      .map((item, index) => {
+        return `${index + 1}. ${item.name}
+   Colour: ${item.selectedColour}
+   Quantity: ${item.quantity}
+   Unit price: GH₵${item.price.toFixed(2)}
+   Subtotal: GH₵${(item.price * item.quantity).toFixed(2)}`;
+      })
+      .join("\n\n");
+
+    const message = `Hello Adeyinka! I would like to place an order.
+
+MY ORDER
+
+${orderDetails}
+
+ORDER TOTAL: GH₵${cartTotal.toFixed(2)}
+
+Please let me know the next steps. Thank you!`;
+
+    const whatsappUrl = `https://wa.me/233502064518?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  }
+
   if (cartItems.length === 0) {
     return (
       <main className="cart-page">
@@ -32,14 +58,26 @@ function Cart() {
         <section className="cart-items">
           {cartItems.map((item) => (
             <article className="cart-item" key={item.id}>
-              <img
-                src={item.image}
-                alt={item.name}
-                className="cart-item__image"
-              />
+              <div className="cart-item__image-wrap">
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={`${item.name} in ${item.selectedColour || ""}`}
+                    className="cart-item__image"
+                  />
+                ) : (
+                  <div className="cart-item__image-placeholder">
+                    <span>{item.name}</span>
+                    <small>IMAGE COMING SOON</small>
+                  </div>
+                )}
+              </div>
 
               <div className="cart-item__details">
                 <h2>{item.name}</h2>
+
+                {item.selectedColour && <p>Colour: {item.selectedColour}</p>}
+
                 <p>GH₵{item.price.toFixed(2)}</p>
 
                 <div className="cart-item__quantity">
@@ -97,7 +135,11 @@ function Cart() {
             <span>GH₵{cartTotal.toFixed(2)}</span>
           </div>
 
-          <button type="button" className="cart-summary__button">
+          <button
+            type="button"
+            className="cart-summary__button"
+            onClick={handleWhatsAppCheckout}
+          >
             PROCEED TO CHECKOUT
           </button>
 

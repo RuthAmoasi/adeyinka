@@ -1,6 +1,5 @@
 import Hero from "../components/Hero";
 import StyleSection from "../components/StyleSection";
-import ProductSection from "../components/ProductSection";
 import AboutSection from "../components/AboutSection";
 
 function Home() {
@@ -8,7 +7,6 @@ function Home() {
     <>
       <Hero />
       <StyleSection />
-      <ProductSection />
       <AboutSection />
     </>
   );

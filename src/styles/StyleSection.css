@@ -1,14 +1,22 @@
+/* ========================================
+   COLLECTION SECTION
+======================================== */
+
 .style-section {
   padding: 100px 8%;
   background-color: var(--color-ivory);
 }
+
+/* ========================================
+   SECTION HEADER
+======================================== */
 
 .style-section__header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 32px;
-  margin-bottom: 42px;
+  margin-bottom: 35px;
 }
 
 .style-section__eyebrow {
@@ -39,10 +47,32 @@
   line-height: 1.9;
 }
 
+/* ========================================
+   COLLECTION LABEL
+======================================== */
+
+.style-section__collection-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 14px 0;
+  border-top: 1px solid var(--color-cream);
+  border-bottom: 1px solid var(--color-cream);
+  color: var(--color-brown-light);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+/* ========================================
+   STYLE GRID
+======================================== */
+
 .style-section__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
 }
 
 .style-card {
@@ -53,7 +83,7 @@
 
 .style-card__image-wrap {
   position: relative;
-  height: 390px;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   background-color: var(--color-cream);
 }
@@ -81,7 +111,7 @@
   border-radius: 50%;
   color: white;
   font-size: 10px;
-  background-color: rgba(53, 35, 25, 0.2);
+  background-color: rgba(53, 35, 25, 0.3);
 }
 
 .style-card__arrow {
@@ -106,13 +136,17 @@
   color: var(--color-ivory);
 }
 
+/* ========================================
+   STYLE DETAILS
+======================================== */
+
 .style-card__details {
   padding-top: 18px;
 }
 
 .style-card__name {
   margin-bottom: 7px;
-  font-size: 23px;
+  font-size: 21px;
 }
 
 .style-card__description {
@@ -122,27 +156,61 @@
   line-height: 1.7;
 }
 
-/* Tablet */
-@media (max-width: 900px) {
+/* ========================================
+   COLLECTION FOOTER BUTTON
+======================================== */
+
+.style-section__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.style-section__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 16px 26px;
+  border: 1px solid var(--color-brown);
+  background-color: var(--color-brown);
+  color: var(--color-ivory);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.style-section__button:hover {
+  background-color: transparent;
+  color: var(--color-brown);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
   .style-section {
-    padding: 75px 6%;
+    padding: 80px 6%;
   }
 
   .style-section__grid {
-    gap: 16px;
-  }
-
-  .style-card__image-wrap {
-    height: 320px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 20px;
   }
 
   .style-card__name {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 
-/* Mobile */
-@media (max-width: 650px) {
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
   .style-section {
     padding: 65px 6%;
   }
@@ -151,24 +219,55 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
 
   .style-section__intro {
     max-width: 360px;
   }
 
+  .style-section__collection-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
   .style-section__grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 14px;
   }
 
   .style-card__image-wrap {
-    height: auto;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 4;
+  }
+
+  .style-card__number {
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .style-card__arrow {
+    right: 10px;
+    bottom: 10px;
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
   }
 
   .style-card__name {
-    font-size: 23px;
+    font-size: 17px;
+  }
+
+  .style-card__description {
+    font-size: 11px;
+  }
+
+  .style-section__footer {
+    margin-top: 36px;
+  }
+
+  .style-section__button {
+    width: 100%;
   }
 }
