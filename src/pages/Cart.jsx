@@ -51,7 +51,10 @@ Please let me know the next steps. Thank you!`;
       <div className="cart-page__header">
         <p className="cart-page__eyebrow">YOUR SELECTION</p>
         <h1>Shopping Bag</h1>
-        <p>{cartItems.length} different items in your bag</p>
+        <p>
+          {cartItems.reduce((total, item) => total + item.quantity, 0)} items in
+          your bag
+        </p>
       </div>
 
       <div className="cart-layout">

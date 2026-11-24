@@ -63,28 +63,6 @@
   line-height: 2;
 }
 
-.about-section__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  margin-top: 14px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--color-brown);
-  color: var(--color-brown);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.3px;
-}
-
-.about-section__link span {
-  font-size: 17px;
-  transition: transform 0.2s ease;
-}
-
-.about-section__link:hover span {
-  transform: translateX(4px);
-}
-
 .about-section__signature {
   margin-top: 42px;
   margin-bottom: 0;

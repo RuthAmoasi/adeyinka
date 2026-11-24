@@ -12,8 +12,11 @@ function Navbar() {
   return (
     <header className="navbar">
       <Link to="/" className="navbar__brand" onClick={closeMenu}>
-        <span className="navbar__logo">ADEYINKA</span>
-        <span className="navbar__tagline">SURROUNDED BY ROYALTY</span>
+        <img
+          src="/images/adeyinka-logo.png"
+          alt="Adeyinka — Surrounded by Royalty"
+          className="navbar__logo-image"
+        />
       </Link>
 
       <button

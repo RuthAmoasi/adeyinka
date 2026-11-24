@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/Hero.css";
 
 function Hero() {
@@ -17,10 +18,10 @@ function Hero() {
           special. Find the style that speaks to you.
         </p>
 
-        <a href="/shop" className="hero__button">
+        <Link to="/shop" className="hero__button">
           SHOP THE COLLECTION
           <span aria-hidden="true">→</span>
-        </a>
+        </Link>
 
         <p className="hero__note">EFFORTLESS STYLE. TIMELESS BEAUTY.</p>
       </div>

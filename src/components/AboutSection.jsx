@@ -36,10 +36,6 @@ function AboutSection() {
           getting dressed feel special.
         </p>
 
-        <a href="/about" className="about-section__link">
-          DISCOVER OUR STORY <span aria-hidden="true">→</span>
-        </a>
-
         <p className="about-section__signature">SURROUNDED BY ROYALTY</p>
       </div>
     </section>

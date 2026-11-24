@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/Footer.css";
 
 function Footer() {
@@ -5,11 +6,13 @@ function Footer() {
     <footer className="footer">
       <div className="footer__main">
         <div className="footer__brand">
-          <a href="/" className="footer__logo">
-            ADEYINKA
-          </a>
-
-          <p className="footer__tagline">SURROUNDED BY ROYALTY</p>
+          <Link to="/" className="footer__logo">
+            <img
+              src="/images/adeyinka-logo.png"
+              alt="Adeyinka — Surrounded by Royalty"
+              className="footer__logo-image"
+            />
+          </Link>
 
           <p className="footer__description">
             Timeless style, thoughtful details, and pieces that celebrate the
@@ -19,26 +22,23 @@ function Footer() {
 
         <div className="footer__column">
           <h3 className="footer__heading">EXPLORE</h3>
-          <a href="/">Home</a>
-          <a href="/shop">Shop All</a>
-          <a href="/about">Our Story</a>
-          <a href="/contact">Contact Us</a>
+          <Link to="/">Home</Link>
+          <Link to="/shop">Shop All</Link>
+          <Link to="/#about">Our Story</Link>
+          <Link to="/contact">Contact Us</Link>
         </div>
 
         <div className="footer__column">
           <h3 className="footer__heading">CUSTOMER CARE</h3>
-          <a href="/contact">Ordering & Enquiries</a>
-          <a href="/contact">Delivery Information</a>
-          <a href="/contact">Returns & Exchanges</a>
-          <a href="/contact">Frequently Asked Questions</a>
+          <Link to="/contact">Ordering & Enquiries</Link>
         </div>
 
         <div className="footer__column footer__contact">
           <h3 className="footer__heading">GET IN TOUCH</h3>
           <p>Have a question or need help finding your style?</p>
-          <a href="/contact" className="footer__contact-link">
+          <Link to="/contact" className="footer__contact-link">
             We'd love to hear from you →
-          </a>
+          </Link>
         </div>
       </div>
 

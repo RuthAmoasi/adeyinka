@@ -17,18 +17,16 @@
 
 .footer__logo {
   display: inline-block;
-  color: var(--color-ivory);
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 3px;
+  margin-bottom: 20px;
 }
 
-.footer__tagline {
-  margin-top: 7px;
-  margin-bottom: 24px;
-  font-size: 8px;
-  letter-spacing: 2px;
+.footer__logo-image {
+  display: block;
+  width: 210px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .footer__description {
@@ -125,6 +123,10 @@
   .footer__brand {
     grid-column: 1 / -1;
     max-width: 340px;
+  }
+
+  .footer__logo-image {
+    width: 185px;
   }
 
   .footer__bottom {

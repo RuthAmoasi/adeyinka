@@ -19,19 +19,12 @@
   color: var(--color-brown);
 }
 
-.navbar__logo {
-  font-family: var(--font-heading);
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  line-height: 1.2;
-}
-
-.navbar__tagline {
-  margin-top: 5px;
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: 2px;
+.navbar__logo-image {
+  display: block;
+  width: 195px;
+  max-height: 82px;
+  height: auto;
+  object-fit: contain;
 }
 
 .navbar__links {
@@ -89,13 +82,9 @@
     padding: 18px 5%;
   }
 
-  .navbar__logo {
-    font-size: 21px;
-  }
-
-  .navbar__tagline {
-    font-size: 7px;
-    letter-spacing: 1.5px;
+  .navbar__logo-image {
+    width: 155px;
+    max-height: 65px;
   }
 
   .navbar__menu-toggle {
