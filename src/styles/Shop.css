@@ -327,6 +327,221 @@
   font-size: 14px;
 }
 
+/* GROUPED DRESS DESIGNS */
+
+.shop-style-group {
+  margin-top: 55px;
+}
+
+.shop-style-group__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dfd2c3;
+}
+
+.shop-style-group__heading h3 {
+  margin-bottom: 7px;
+  color: var(--color-brown);
+  font-family: var(--font-heading);
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.shop-style-group__heading p {
+  margin-bottom: 0;
+  color: var(--color-brown-light);
+  font-size: 12px;
+}
+
+/* PRODUCT IMAGE BUTTON */
+
+.shop-product__image-trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.shop-product__image-trigger:focus-visible {
+  outline: 2px solid var(--color-caramel);
+  outline-offset: -3px;
+}
+
+.shop-product__image-trigger .shop-product__placeholder {
+  transition: background-color 0.3s ease;
+}
+
+.shop-product__image-trigger:hover .shop-product__placeholder {
+  background-color: #eee2d3;
+}
+
+/* QUICK ADD BUTTON */
+
+.shop-product__quick-add {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-ivory);
+  color: var(--color-brown);
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.shop-product__quick-add:hover {
+  background-color: var(--color-brown);
+  color: white;
+}
+
+/* PRODUCT DETAILS MODAL */
+
+.shop-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  overflow-y: auto;
+  background-color: rgba(35, 23, 17, 0.72);
+}
+
+.shop-modal__content {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  grid-template-columns: 1fr 1fr;
+  overflow-y: auto;
+  background-color: var(--color-ivory);
+}
+
+.shop-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  z-index: 2;
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-ivory);
+  color: var(--color-brown);
+  cursor: pointer;
+  font-size: 27px;
+  font-weight: 300;
+}
+
+.shop-modal__image-wrap {
+  min-height: 520px;
+  background-color: var(--color-cream);
+}
+
+.shop-modal__image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+}
+
+.shop-modal__details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 55px 40px;
+}
+
+.shop-modal__details h2 {
+  margin: 12px 0 8px;
+  color: var(--color-brown);
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.shop-modal__colour {
+  margin-bottom: 18px;
+  color: var(--color-brown-light);
+  font-size: 13px;
+}
+
+.shop-modal__price {
+  margin-bottom: 22px;
+  color: var(--color-brown);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.shop-modal__description {
+  margin-bottom: 25px;
+  color: var(--color-brown-light);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.shop-modal__fit {
+  width: 100%;
+  margin-bottom: 28px;
+  padding: 18px 0;
+  border-top: 1px solid #dfd2c3;
+  border-bottom: 1px solid #dfd2c3;
+}
+
+.shop-modal__fit h3 {
+  margin-bottom: 7px;
+  color: var(--color-brown);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.shop-modal__fit p {
+  margin-bottom: 0;
+  color: var(--color-brown-light);
+  font-size: 12px;
+}
+
+.shop-modal__add-button {
+  width: 100%;
+  padding: 17px;
+  border: none;
+  background-color: var(--color-brown);
+  color: white;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: background-color 0.2s ease;
+}
+
+.shop-modal__add-button:hover {
+  background-color: var(--color-brown-light);
+}
+
 /* TABLET */
 
 @media (max-width: 1000px) {
@@ -395,5 +610,49 @@
 
   .shop-product__placeholder span {
     font-size: 17px;
+  }
+
+  .shop-style-group {
+    margin-top: 40px;
+  }
+
+  .shop-style-group__heading h3 {
+    font-size: 23px;
+  }
+
+  .shop-product__quick-add {
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    font-size: 21px;
+  }
+
+  .shop-modal {
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .shop-modal__content {
+    max-height: none;
+    grid-template-columns: 1fr;
+  }
+
+  .shop-modal__image-wrap {
+    min-height: 300px;
+    max-height: 400px;
+  }
+
+  .shop-modal__image-wrap img {
+    min-height: 300px;
+    max-height: 400px;
+  }
+
+  .shop-modal__details {
+    padding: 30px 25px;
+  }
+
+  .shop-modal__details h2 {
+    font-size: 30px;
   }
 }
